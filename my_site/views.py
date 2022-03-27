@@ -1,8 +1,10 @@
 #Main views for the whole project will be listed here
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse(
-        '<h1 style="color: #50232e; text-align: center">This is the home of our Django app!</h1>'
-    )
+    return render(request, 'base.html')
+
+def not_found_error_view (request,exception): 
+    return render (request, 'error_view.html', status=404)

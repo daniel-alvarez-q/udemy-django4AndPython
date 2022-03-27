@@ -23,3 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('my_app/', include('my_app.urls'))
 ]
+
+
+handler404 = 'my_site.views.not_found_error_view'
